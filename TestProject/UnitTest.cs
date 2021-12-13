@@ -19,6 +19,15 @@ namespace TestProject
             Assert.True(!result);
         }
 
+        //Different Id
+        [Fact]
+        public void Test90()
+        {
+            var student1 = new Student { Name = "John", Id = 100, Marks = new[] { 80, 90, 100 } };
+            var student2 = new Student { Name = "John", Id = 101, Marks = new[] { 80, 90, 100 } };
+            var result = ObjectComparer.Compare(student1, student2);
+            Assert.True(!result);
+        }
         // order of Marks is different
         [Fact]
         public void Test3()
